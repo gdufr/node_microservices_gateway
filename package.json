@@ -1,0 +1,46 @@
+{
+  "name": "gateway",
+  "version": "1.0.0",
+  "description": "Serves as a gateway server coordinating access to microservices",
+  "main": "server.js",
+  "dependencies": {
+    "application-configuration": "git+ssh://git@innersource.accenture.com/nmi/application-configuration.git",
+    "async": "^2.3.0",
+    "bluebird": "^3.5.0",
+    "boom": "^4.3.1",
+    "cache": "git+ssh://git@innersource.accenture.com/nmi/cache.git",
+    "chairo": "^3.0.0",
+    "data-access": "git+ssh://git@innersource.accenture.com/nmi/data-access.git",
+    "error": "git+ssh://git@innersource.accenture.com/nmi/error.git",
+    "hapi": "^16.5.2",
+    "hapi-bunyan": "^0.6.0",
+    "inert": "^4.2.1",
+    "lodash": "^4.17.4",
+    "logging": "git+ssh://git@innersource.accenture.com/nmi/logging.git",
+    "path": "^0.12.7",
+    "security": "git+ssh://git@innersource.accenture.com/nmi/security.git",
+    "seneca": "^3.2.2",
+    "services": "git+ssh://git@innersource.accenture.com/nmi/services.git"
+  },
+  "scripts": {
+    "test": "nyc --reporter=html mocha --reporter mochawesome",
+    "start": "node server.js",
+    "reinstall": "for i in $(echo application-configuration cache data-access logging security services); do rm -rf node_modules/$i ; done && npm install",
+    "linklibs": "microservicePath=\"$(pwd)\" && for libraryName in $(echo application-configuration cache data-access error logging security services); do rm -rf node_modules/$libraryName && ln -s $microservicePath/../libraries/$libraryName node_modules/$libraryName ; done"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.5.0",
+    "mochawesome": "^2.3.0",
+    "nyc": "^10.3.2"
+  }
+}

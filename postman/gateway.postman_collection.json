@@ -1,0 +1,33 @@
+{
+	"variables": [],
+	"info": {
+		"name": "gateway",
+		"_postman_id": "34ba666e-0c05-3769-1163-68ea3f4c180f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:3010/ping",
+			"request": {
+				"url": "http://127.0.0.1:3010/ping",
+				"method": "GET",
+				"header": [
+					{
+						"key": "cache-control",
+						"value": "no-cache",
+						"description": ""
+					},
+					{
+						"key": "service",
+						"value": "hello",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Generated from a curl request: \ncurl -X GET           http://127.0.0.1:3010/ping           -H 'cache-control: no-cache'    -H 'service: hello'"
+			},
+			"response": []
+		}
+	]
+}

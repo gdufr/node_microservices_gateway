@@ -1,0 +1,4 @@
+exports.paths = {
+    routesDirectory: 'routes'
+};
+
